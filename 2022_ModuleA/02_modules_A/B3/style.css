@@ -1,3 +1,29 @@
-/**
-Your Code
- */
+.photo-item:nth-child(n+10){
+    display: none;
+}
+
+.photos{
+    counter-reset:overflow-count;
+}
+
+
+.photo-item:nth-child(n+9){
+    counter-increment: overflow-count;
+}
+
+.photo-item:nth-child(9){
+    position: relative;
+}
+
+.photo-item:nth-child(9)::after{
+    content: "+" counter(overflow-count);
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    color:#fff;
+    font-size:2rem;
+    font-weight:bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
