@@ -1,0 +1,20 @@
+.wrap {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background-image: url("/02_modules_A/A3/images/Snow.jpg");
+  background-position: center;
+  background-size: cover;
+  mask-image: url("/02_modules_A/A3/images/Bison.png");
+  mask-position:center ;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.bison {
+  width: 100%;
+  display: block;
+  mix-blend-mode: multiply;
+  opacity: 0.8;
+}
+

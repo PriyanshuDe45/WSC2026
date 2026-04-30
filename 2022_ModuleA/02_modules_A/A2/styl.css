@@ -1,0 +1,29 @@
+body {
+  background: #ddd;
+  font-family: sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 20px;
+  padding: 20px;
+}
+
+.icon {
+  width: 100px;
+  height: 100px;
+  fill: none;
+  stroke-width: 6;
+}
+
+/* Colors */
+.purple { stroke: purple; }
+.green { stroke: green; }
+.red { stroke: red; }
+
+/* Filled version */
+.fill {
+  fill: red;
+  stroke: none;
+}

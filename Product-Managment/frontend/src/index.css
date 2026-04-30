@@ -1,0 +1,9 @@
+body { font: 14px sans-serif; margin: 0; padding: 12px; }
+nav { padding: 8px 0; border-bottom: 1px solid #ccc; margin-bottom: 12px; }
+nav a, nav button { margin-right: 12px; }
+input, textarea, select { display: block; margin: 4px 0; padding: 4px; width: 300px; }
+table { border-collapse: collapse; margin-top: 8px; }
+th, td { border: 1px solid #999; padding: 4px 8px; text-align: left; }
+button { padding: 4px 8px; cursor: pointer; }
+.err { color: red; }
+.ok { color: green; }
