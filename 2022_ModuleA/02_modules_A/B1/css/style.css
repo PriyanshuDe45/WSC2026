@@ -1,0 +1,42 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:40px;
+    background: #fff;
+}
+
+.boxes{
+    display: flex;
+    gap:16px;
+    flex-wrap:wrap;
+    margin-bottom: 10px;
+}
+
+.box{
+    width: 80px;
+    height: 80px;
+    border: 2px solid #333;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    cursor:pointer;
+    user-select: none;
+    background: #fff;
+    transition: background 0.15s, border 0.15s;
+}
+
+.box.active{
+    background: #f5c518;
+    border: 4px solid #b8860b;
+}
+
+.box.active{
+    background: #f5c518;
+    border: 4px solid #b8860b;
+}
+
+.sum{
+    font-size:16px;
+    margin-top:6px;
+}
