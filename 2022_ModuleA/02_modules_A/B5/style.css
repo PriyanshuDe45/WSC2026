@@ -23,7 +23,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* Flip Card */
 .flip-card {
   width: 260px;
   height: 420px;
@@ -42,7 +41,7 @@ h1 {
   transform: rotateY(180deg);
 }
 
-/* Card faces */
+
 .card {
   position: absolute;
   width: 100%;
