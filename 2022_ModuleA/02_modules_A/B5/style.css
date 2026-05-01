@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+h1 {
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+/* Layout */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Flip Card */
+.flip-card {
+  width: 260px;
+  height: 420px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Card faces */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  padding: 25px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FRONT */
+.front ul {
+  list-style: none;
+  padding: 0;
+}
+
+.front li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  font-size: 14px;
+}
+
+/* BACK */
+.back {
+  transform: rotateY(180deg);
+}
+
+.back h3 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  color: #333;
+  cursor: pointer;
+}
+
+
+.icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+
+.basic {
+  background: linear-gradient(135deg, #d4145a, #3a7bd5);
+}
+
+.plus {
+  background: linear-gradient(135deg, #ff512f, #f9d423);
+}
+
+.pro {
+  background: linear-gradient(135deg, #00c9ff, #92fe9d);
+}
+
+.card img {
+   height:50px;
+  filter: brightness(0) invert(1);
+}
