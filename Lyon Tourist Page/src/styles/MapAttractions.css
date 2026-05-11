@@ -1,0 +1,128 @@
+.map-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.map-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* LEFT: 2x2 grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.attraction-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: #333;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.5);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Light sweep effect on hover */
+.card-light {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255,255,255,0.35) 50%,
+    transparent 80%
+  );
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+
+.attraction-card:hover .card-light {
+  animation: lightSweep 0.6s ease forwards;
+}
+
+@keyframes lightSweep {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+/* Focus effect (from map spot hover OR card hover) */
+.attraction-card.focused,
+.attraction-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+}
+
+.all-attractions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  background: #eee;
+  color: #333;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* RIGHT: Map */
+.map-image-wrapper {
+  position: relative;
+  flex: 1.2;
+}
+
+.map-img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.map-spot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e94560;
+  color: #fff;
+  border: 2px solid #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.map-spot:hover {
+  transform: translate(-50%, -50%) scale(1.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}

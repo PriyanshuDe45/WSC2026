@@ -1,0 +1,42 @@
+.tabs-section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tab-list {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 1.5rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #555;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tab-btn.active,
+.tab-btn[aria-selected="true"] {
+  color: #222;
+  border-bottom-color: #222;
+  font-weight: 600;
+}
+
+.tab-btn:focus {
+  outline: 2px solid #4444ff;
+  outline-offset: 2px;
+}
+
+[role="tabpanel"] {
+  padding: 1rem 0;
+  color: #444;
+  line-height: 1.7;
+}
