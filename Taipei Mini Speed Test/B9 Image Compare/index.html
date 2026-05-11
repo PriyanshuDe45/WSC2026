@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Image Compare</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="compare-container" id="compare">
+        <input type="range" min="0" max="100" value="50" id="slider">
+
+        <img src="before.jpg" class="before">
+        <img src="after.jpg" class="after">
+    </div>
+
+    <script>
+        const container = document.getElementById("compare");
+        const slider = document.getElementById("slider");
+
+        function updateCompare(value) {
+            container.style.setProperty("--position", value + "%");
+            slider.value = value;
+        }
+
+        updateCompare(50);
+
+        slider.addEventListener("input", (e) => {
+            updateCompare(e.target.value);
+        });
+
+        container.addEventListener("click", (e) => {
+            if (e.target === slider) return;
+
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const percent = (x / rect.width) * 100;
+
+            updateCompare(percent);
+        });
+    </script>
+
+</body>
+
+</html>

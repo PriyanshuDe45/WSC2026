@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #111;
+    font-family: sans-serif;
+}
+
+.compare-container {
+    --position: 50%;
+
+    position: relative;
+    width: 900px;
+    max-width: 95vw;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: ew-resize;
+}
+
+/* images */
+
+.compare-container img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* right image */
+
+.compare-container .after {
+    z-index: 1;
+}
+
+/* left image */
+
+.compare-container .before {
+    z-index: 2;
+    clip-path: inset(0 calc(100% - var(--position)) 0 0);
+}
+
+/* slider */
+
+.compare-container input[type="range"] {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    background: transparent;
+    z-index: 10;
+    cursor: ew-resize;
+}
+
+/* hide default */
+
+.compare-container input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 1px;
+    height: 100vh;
+    background: transparent;
+}
+
+.compare-container input[type="range"]::-moz-range-thumb {
+    width: 1px;
+    height: 100vh;
+    border: none;
+    background: transparent;
+}
+
+/* splitter line */
+
+.compare-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: var(--position);
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: white;
+    z-index: 5;
+}
+
+/* splitter icon */
+
+.compare-container::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: var(--position);
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    background: url("./splitter.svg") center/contain no-repeat;
+    z-index: 6;
+    pointer-events: none;
+}

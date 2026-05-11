@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Bar Chart</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Chart Area */
+    .chart {
+      width: 500px;
+      height: 300px;
+      border: 2px solid #ccc;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-evenly;
+      padding: 20px;
+      background: white;
+      overflow: hidden;
+    }
+
+    /* Bars */
+    .bar {
+      width: 50px;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.6s ease;
+    }
+
+    /* Different heights */
+    .bar1 {
+      height: 80px;
+      background: #ff6b6b;
+      transition-delay: 0s;
+    }
+
+    .bar2 {
+      height: 140px;
+      background: #4ecdc4;
+      transition-delay: 0.2s;
+    }
+
+    .bar3 {
+      height: 200px;
+      background: #1a73e8;
+      transition-delay: 0.4s;
+    }
+
+    .bar4 {
+      height: 120px;
+      background: #f7b731;
+      transition-delay: 0.6s;
+    }
+
+    .bar5 {
+      height: 170px;
+      background: #9b59b6;
+      transition-delay: 0.8s;
+    }
+
+    /* Hover Animation */
+    .chart:hover .bar {
+      transform: scaleY(1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="chart">
+    <div class="bar bar1"></div>
+    <div class="bar bar2"></div>
+    <div class="bar bar3"></div>
+    <div class="bar bar4"></div>
+    <div class="bar bar5"></div>
+  </div>
+
+</body>
+</html>
